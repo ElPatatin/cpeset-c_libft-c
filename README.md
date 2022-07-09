@@ -1,2 +1,2 @@
-# cpeset-c_libft-c
-A C library
+# cpeset_CLIFT
+A C function library
