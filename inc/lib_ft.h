@@ -42,10 +42,15 @@ int		ft_atoi(const char *str, int base);
 char	*ft_itoa(int nbr);
 char	*ft_itoa_base(int nbr, int base);
 
+// Ft_sort functions. Sorting purpouse functions
 void	ft_swap(int *a, int *b);
 void	ft_sort_int_tab(int *tab, unsigned int size);
 void	ft_rev_int_tab(int *tab, int size);
 
+
+
+// FT_str functions. Multiple functions about strings manipulation or related.
+size_t	ft_strlen(char *s);
 
 
 // To put

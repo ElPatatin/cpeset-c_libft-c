@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 20:00:08 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/07/09 20:00:09 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/07/10 16:49:03 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 char	*ft_itoa_base(int nbr, int base)
 {
 	char	*res;
+	char	*str;
 	int		len;
 
 	len = ft_nbrlen(nbr);
+	str = "0123456789abcdef";
 	res = (char *)malloc(sizeof(char) * len + 1);
 	if (!res)
 		return (NULL);
@@ -29,7 +31,7 @@ char	*ft_itoa_base(int nbr, int base)
 	while (nbr)
 	{
 		--len;
-		res[len] = ft_absval(nbr % base) + '0';
+		res[len] = str[ft_absval(nbr % base)];
 		nbr /= 10;
 	}
 	return (res);
