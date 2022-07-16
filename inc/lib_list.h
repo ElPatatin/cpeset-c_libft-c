@@ -13,7 +13,7 @@
 #ifndef LIB_LIST_H
 # define LIB_LIST_H
 
-# include "lib_inc.h"
+# include "lib_ft.h"
 
 typedef struct s_list	s_list
 {
