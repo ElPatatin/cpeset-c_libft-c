@@ -12,7 +12,7 @@ void	ft_lstremove_if(t_list **begin_list, void *data_ref, int (*cmp)(), void (*f
 	current = *begin_list;
 	while (current)
 	{
-		while (current && (*cmp)(new_elt->data, data_ref) == 0)
+		while (current && (*cmp)(current->data, data_ref) == 0)
 		{
 			if (pre)
 				pre->next = current->next;
@@ -21,7 +21,7 @@ void	ft_lstremove_if(t_list **begin_list, void *data_ref, int (*cmp)(), void (*f
 			(*free_fct)(current->data);
 			tmp = current;
 			current = current->next;
-			free(tmp;)
+			free(tmp);
 		}
 		if (current)
 		{
