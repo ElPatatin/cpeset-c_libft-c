@@ -15,7 +15,7 @@
 
 # include "lib_inc.h"
 
-typedef long double		t_ld;
+typedef long long		t_ld;
 typedef unsigned int	t_unt;
 
 // FT_is functions. Return 1 if true, return 0 if false
@@ -29,18 +29,27 @@ int		ft_isupper(int c);
 int		ft_islower(int c);
 
 // FT_math functions. Multiple purpouse functions for operations.
-t_ld	ft_pow(t_ld n, t_unt pow);
-t_ld	ft_factorial(t_ld nb);
+t_ll	ft_pow(t_ll n, t_unt pow);
+t_ll	ft_factorial(t_ll nb);
 int		ft_sqrt(int nb);
 int		ft_prime(int nb);
 int		ft_find_next_prime(int nb);
-t_ld	ft_absval(t_ld n);
-int		ft_nbrlen(t_ld nbr);
-int		ft_nbrlen_base(t_ld nbr, int base);
+t_ll	ft_absval(t_ll n);
+int		ft_nbrlen(t_ll nbr);
+int		ft_nbrlen_base(t_ll nbr, int base);
 int		ft_atoi(const char *str);
-int		ft_atoi(const char *str, int base);
+int		ft_atoi_base(const char *str, int base);
 char	*ft_itoa(int nbr);
 char	*ft_itoa_base(int nbr, int base);
+
+// FT_put functions. These functions prints either in standart output or in fd
+int		ft_putchar(int c);
+int		ft_putchar_fd(int c, int fd);
+int		ft_putstr(char	*str);
+int		ft_putstr_fd(char	*str, int fd);
+int		ft_putnbr(t_ll nbr);
+int		ft_putnbr_fd(t_ll nbr, int fd);
+int		ft_putnbr_base_fd(t_ll nbr, int base, int fd);
 
 // Ft_sort functions. Sorting purpouse functions
 void	ft_swap(int *a, int *b);

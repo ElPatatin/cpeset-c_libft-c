@@ -12,7 +12,7 @@
 
 #include "../../inc/lib_ft.h"
 
-t_ld	ft_pow(t_ld n, t_unt pow)
+t_ll	ft_pow(t_ll n, t_unt pow)
 {
 	if (pow == 0)
 		return (1);

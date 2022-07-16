@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrlen_base.c                                   :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/09 20:00:24 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/07/09 20:00:25 by cpeset-c         ###   ########.fr       */
+/*   Created: 2022/07/16 16:53:44 by cpeset-c          #+#    #+#             */
+/*   Updated: 2022/07/16 16:53:46 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/lib_ft.h"
 
-int	ft_nbrlen_base(t_ll nbr, int base)
+int	ft_putchar(int c)
 {
-	int	len;
-
-	len = 0;
-	if (nbr == 0)
-		return (1);
-	if (nbr <= 0)
-		len++;
-	while (nbr)
-	{
-			nbr /= base;
-			len++;
-	}
-	return (len);
+	if (write(STDOUT_FILENO, &c, sizeof(char)) != sizeof(char))
+		return (-1);
+	return (1);
 }

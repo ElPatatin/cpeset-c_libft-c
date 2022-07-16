@@ -12,7 +12,7 @@
 
 #include "../../inc/lib_ft.h"
 
-t_ld	ft_factorial(t_ld nb)
+t_ll	ft_factorial(t_ll nb)
 {
 	int	i;
 	int	fact;

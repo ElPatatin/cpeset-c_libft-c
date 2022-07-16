@@ -12,7 +12,7 @@
 
 #include "../../inc/lib_ft.h"
 
-t_ld	ft_absval(t_ld n)
+t_ll	ft_absval(t_ll n)
 {
 	if (n < 0)
 		n = -n;

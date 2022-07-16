@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrlen_base.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr_base_fd.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/09 20:00:24 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/07/09 20:00:25 by cpeset-c         ###   ########.fr       */
+/*   Created: 2022/07/16 16:54:14 by cpeset-c          #+#    #+#             */
+/*   Updated: 2022/07/16 16:54:15 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/lib_ft.h"
 
-int	ft_nbrlen_base(t_ll nbr, int base)
+int	ft_putnbr_base_fd(t_ll nbr, int base, int fd)
 {
-	int	len;
+	char	*str;
 
-	len = 0;
-	if (nbr == 0)
-		return (1);
-	if (nbr <= 0)
-		len++;
-	while (nbr)
+	str = "0123456789abcdef";
+	if (nbr < 0)
 	{
-			nbr /= base;
-			len++;
+		if (base <= 10)
+		{
+			if (write(fd, "-", sizeof(char)) != sizeof(char))
+				return (-1);
+			ft_absval(nbr);
+		}
+		else
+			nbr = UINT_MAX + nbr + 1;
 	}
-	return (len);
+	if (nbr >= base)
+		if (ft_putnbr(nbr / base, base, fd) == -1)
+			return (-1);
+	if (write(fd, &str[nbr % base], sizeof(char)) != sizeof(char))
+		return (-1);
+	return (0);
 }
