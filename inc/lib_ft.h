@@ -13,9 +13,17 @@
 #ifndef LIB_FT_H
 # define LIB_FT_H
 
-# include "lib_inc.h"
+# include <unistd.h>
+# include <stdlib.h>
+# include <limits.h>
+# include <stdio.h>
+# include <fcntl.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+# include <sys/errno.h>
 
-typedef long long		t_ld;
+typedef unsigned long	t_ul;
+typedef long long		t_ll;
 typedef unsigned int	t_unt;
 
 // FT_is functions. Return 1 if true, return 0 if false
@@ -55,12 +63,16 @@ int		ft_putnbr_base_fd(t_ll nbr, int base, int fd);
 void	ft_swap(int *a, int *b);
 void	ft_sort_int_tab(int *tab, unsigned int size);
 void	ft_rev_int_tab(int *tab, int size);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+char	**ft_split(char const *s, char c);
 
 
 // FT_str functions. Multiple functions about strings manipulation or related.
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(char *s, int c);
 char	*ft_strjoin(char *s1, char *s2);
+int		ft_str_wcount(char const *s, char c);
 
 
 // FT_mem functions.
@@ -73,7 +85,8 @@ void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 int		*ft_range(int min, int max);
-int		ft_ultrange(int **range, int min, int max)
+int		ft_ultrange(int **range, int min, int max);
+char	**ft_memfree(char **ptr, int len);
 
 // To put
 
@@ -81,19 +94,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
 
 #endif
