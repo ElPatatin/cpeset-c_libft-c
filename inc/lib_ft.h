@@ -22,6 +22,10 @@
 # include <sys/uio.h>
 # include <sys/errno.h>
 
+# define TURE   (int)0
+# define FALSE  (int)1
+
+typedef int             t_bool;
 typedef unsigned long	t_ul;
 typedef long long		t_ll;
 typedef unsigned int	t_unt;
@@ -51,6 +55,20 @@ int		ft_atoi_base(const char *str, int base);
 char	*ft_itoa(int nbr);
 char	*ft_itoa_base(int nbr, int base);
 
+// FT_mem functions.
+void	*ft_memset(void *b, int c, size_t len);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memcpy(void *dsy, const void *src, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
+void	*ft_calloc(size_t count, size_t size);
+char	*ft_strdup(const char *s1);
+int		*ft_range(int min, int max);
+int		*ft_rrange(int start, int end);
+int		ft_ultrange(int **range, int min, int max);
+char	**ft_memfree(char **ptr, int len);
+
 // FT_put functions. These functions prints either in standart output or in fd
 int		ft_putchar(int c);
 int		ft_putchar_fd(int c, int fd);
@@ -74,7 +92,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	**ft_split(char const *s, char c);
 
-
 // FT_str functions. Multiple functions about strings manipulation or related.
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(char *s, int c);
@@ -94,19 +111,5 @@ char	*ft_strlowcase(char	*str);
 char	*ft_strupcase(char	*str);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-
-// FT_mem functions.
-void	*ft_memset(void *b, int c, size_t len);
-void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void *dsy, const void *src, size_t n);
-void	*ft_memmove(void *dst, const void *src, size_t len);
-int		ft_memcmp(const void *s1, const void *s2, size_t n);
-void	*ft_memchr(const void *s, int c, size_t n);
-void	*ft_calloc(size_t count, size_t size);
-char	*ft_strdup(const char *s1);
-int		*ft_range(int min, int max);
-int		*ft_rrange(int start, int end);
-int		ft_ultrange(int **range, int min, int max);
-char	**ft_memfree(char **ptr, int len);
 
 #endif
