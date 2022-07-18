@@ -28,10 +28,10 @@ WHITE := \033[0;97m
 
 # -=-=-=-=-	CMND -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-CFLAGS		= -Wall -Werror -Wextra -MMD $(INCLUDE)
+CFLAGS		= -Wall -Werror -Wextra
 AR		= ar -rcs
 RM		= rm -f
-MKDIR		= mkdir -p
+MD		= mkdir -p
 CP		= cp -f
 
 # -=-=-=-=-	PATH -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
@@ -49,11 +49,18 @@ STR_DIR	= ft_str/
 
 LST_DIR	= ft_list/
 
-PRN_DIT	= ft_printf/
+PRN_DIR	= ft_printf/
 
 GNL_DIR	= ft_gnl/
 
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
+
+LIB_FUN = $(INC_DIR)lib_ft.h
+LIB_LST = $(INC_DIR)lib_list.h
+LIB_PRN = $(INC_DIR)lib_ft_printf.h
+LIB_GNL = $(INC_DIR)lib_ft_gnl.h
+
+INCLUDE	= -I $(LIB_FUN) $(LIB_LST) $(LIB_PRN) $(LIB_GNL)
 
 FIS_SRC	= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 		ft_islower.c ft_isupper.c ft_isprint.c ft_isspace.c
@@ -92,11 +99,53 @@ PRN_SRC	= ft_printf.c ft_char_utils.c ft_nbr_utils.c ft_ptr_utils.c
 
 GNL_SRC	= get_next_line.c
 
+SRCS	+= $(addprefix $(FIS_DIR), $(FIS_SRC))
+SRCS	+= $(addprefix $(MTH_DIR), $(MTH_SRC))
+SRCS	+= $(addprefix $(MEM_DIR), $(MEM_SRC))
+SRCS	+= $(addprefix $(PUT_DIR), $(PUT_SRC))
+SRCS	+= $(addprefix $(SRT_DIR), $(SRT_SRC))
+SRCS	+= $(addprefix $(STR_DIR), $(STR_SRC))
+SRCS	+= $(addprefix $(LST_DIR), $(LST_SRC))
+SRCS	+= $(addprefix $(PRN_DIR), $(PRN_SRC))
+SRCS	+= $(addprefix $(GNL_DIR), $(GNL_SRC))
+
+OBJS	= $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
+DEP		= $(addsuffix .d, $(basename $(OBJS)))
+
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+OBJF	= .cache_exist
+
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c | $(OBJF)
 	$(MKDIR) $(dir $@)
-	$(CC) $(CFLAGS) -o $@ -c $<
+	$(CC) -MT $@ -MMD -MP $(CFLAGS) $(INCLUDE) -c $< -o $@
+
+$(OBJF):
+	@$(MD) $(OBJ_DIR)
+	@$(MD) $(OBJ_DIR)$(FIS_DIR)
+	@$(MD) $(OBJ_DIR)$(MTH_DIR)
+	@$(MD) $(OBJ_DIR)$(MEM_DIR)
+	@$(MD) $(OBJ_DIR)$(PUT_DIR)
+	@$(MD) $(OBJ_DIR)$(SRT_DIR)
+	@$(MD) $(OBJ_DIR)$(STR_DIR)
+	@$(MD) $(OBJ_DIR)$(LST_DIR)
+	@$(MD) $(OBJ_DIR)$(PRN_DIR)
+	@$(MD) $(OBJ_DIR)$(GNL_DIR)
+	@touch $(OBJF)
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS)
+
+clean:
+	$(RM) -r $(OBJ_DIR)
+	$(RM)  $(OBJF)
+
+fclean: clean
+	$(RM) $(NAME)
+
+re: fclean all
 
 -include $(DEP)
 

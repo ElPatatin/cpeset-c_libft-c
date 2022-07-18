@@ -1,0 +1,7 @@
+*.o
+*.a
+*.d
+*.gch
+obj/
+.cache_exist
+.DS_Store
