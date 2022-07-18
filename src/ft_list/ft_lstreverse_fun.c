@@ -15,6 +15,8 @@
 void	ft_lstreverse_fun(t_list *begin_list)
 {
 	void	*tmp;
+	void	*aux1;
+	void	*aux2;
 	t_unt	i;
 	t_unt	j;
 
@@ -22,8 +24,10 @@ void	ft_lstreverse_fun(t_list *begin_list)
 	j = ft_lstsize(begin_list) - 1;
 	while (j > i)
 	{
+		aux1 = ft_lstat(begin_list, i);
+		aux2 = ft_lstat(begin_list, j);
 		tmp = ft_lstat(begin_list, i)->data;
-		ft_lstat(begin_list, i)->data = ft_lstat(begin_list, j)->data;
+		aux1->data = aux2->data;
 		ft_lstat(begin_list, j)->data = tmp;
 		++i;
 		--j;
