@@ -15,8 +15,8 @@
 void	ft_lstreverse_fun(t_list *begin_list)
 {
 	void	*tmp;
-	void	*aux1;
-	void	*aux2;
+	t_list	*aux1;
+	t_list	*aux2;
 	t_unt	i;
 	t_unt	j;
 

@@ -19,12 +19,12 @@ t_list	*ft_lstat(t_list *begin_list, t_unt nbr)
 
 	current = begin_list;
 	idx = 0;
-	while (i < nbr)
+	while (idx < nbr)
 	{
 		if (!current)
 			return (NULL);
 		current = current->next;
-		++i;
+		++idx;
 	}
 	return (current);
 }
