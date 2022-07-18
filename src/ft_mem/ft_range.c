@@ -25,7 +25,7 @@ int	*ft_range(int min, int max)
 		return (0);
 	while (i < (max - min))
 	{
-		tab[i] = min[i];
+		tab[i] = min++;
 		++i;
 	}
 	return (tab);

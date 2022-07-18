@@ -25,7 +25,8 @@
 # define TURE   (int)0
 # define FALSE  (int)1
 
-typedef int             t_bool;
+typedef unsigned long long	t_unll;
+typedef int				t_bool;
 typedef unsigned long	t_ul;
 typedef long long		t_ll;
 typedef unsigned int	t_unt;
@@ -82,10 +83,10 @@ int		ft_putnbr_base_fd(t_ll nbr, int base, int fd);
 void	ft_swap(int *a, int *b);
 void	ft_sort_int_tab(int *tab, unsigned int size);
 void	ft_rev_int_tab(int *tab, int size);
-void	ft_foreach(int *tab, int length, void(*f)(int));
-int		ft_map(int *tab, int lenght int(*f)(int));
-int		ft_any(char **tab, int(*f)(char *));
-int		ft_count_if(char **tab, int lenght, int(*f)(char *));
+void	ft_foreach(int *tab, int length, void (*f)(int));
+int		*ft_map(int *tab, int lenght, int (*f)(int));
+int		ft_any(char **tab, int (*f)(char *));
+int		ft_count_if(char **tab, int lenght, int (*f)(char *));
 void	ft_sort_str_tab(char **tab);
 void	ft_adv_sort_string_tab(char **tab, int (*cmp)(char *, char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
@@ -97,14 +98,14 @@ size_t	ft_strlen(const char *s);
 char	*ft_strchr(char *s, int c);
 int		ft_str_wcount(char const *s, char c);
 char	*ft_strjoin(char *s1, char *s2);
-char	*ft_strcpy(char *dst, char *src)
+char	*ft_strcpy(char *dst, char *src);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dest, const char *src, size_t dstsize);
 char	*ft_strrchr(const char *s, int c);
+int		ft_strcmp(char *s1, char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
-int		ft_strcmp(char *s1, char *s2);
 size_t	ft_strcspn(const char *s, const char *reject);
 char	*ft_strcapitalize(char *str);
 char	*ft_strlowcase(char	*str);

@@ -1,6 +1,6 @@
 #include "../../inc/lib_ft.h"
 
-int	ft_count_if(char **tab, int lenght, int(*f)(char *))
+int	ft_count_if(char **tab, int lenght, int (*f)(char *))
 {
 	unsigned int	cnt;
 	ssize_t			i;

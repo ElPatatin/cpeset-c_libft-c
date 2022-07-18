@@ -26,7 +26,7 @@ int	ft_putnbr_fd(t_ll nbr, int fd)
 	if (nbr >= 10)
 		if (ft_putnbr(nbr / 10) == -1)
 			return (-1);
-	if (write(fd, &str[nbr % base], sizeof(char)) != sizeof(char))
+	if (write(fd, &str[nbr % 10], sizeof(char)) != sizeof(char))
 		return (-1);
 	return (0);
 }

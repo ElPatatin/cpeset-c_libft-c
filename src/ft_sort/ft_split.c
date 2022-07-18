@@ -7,12 +7,12 @@ static char	**ft_mem_alloc(char const *s, char c)
 	int		j;
 	int		idx;
 
-	sptr = (char **)malloc(sizeof(char *) * (ft_wcount(s, c) + 1));
+	sptr = (char **)malloc(sizeof(char *) * (ft_str_wcount(s, c) + 1));
 	if (!sptr)
 		return (NULL);
 	i = -1;
 	j = 0;
-	while (++i < ft_wcount(s, c))
+	while (++i < ft_str_wcount(s, c))
 	{
 		idx = 0;
 		while (s[j] == c)

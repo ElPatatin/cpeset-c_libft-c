@@ -4,8 +4,6 @@
 # include <stdarg.h>
 # include "lib_ft.h"
 
-typedef unsigned long long	t_unll;
-
 int	ft_printf(const char *fmt, ...);
 
 int	ft_char(int c);

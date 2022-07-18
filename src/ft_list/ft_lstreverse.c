@@ -7,7 +7,7 @@ void	ft_lstreverse(t_list **begin_list)
 	t_list	*pre;
 
 	if (!begin_list)
-		return (NULL);
+		return ;
 	current = *begin_list;
 	pre = NULL;
 	while (current)

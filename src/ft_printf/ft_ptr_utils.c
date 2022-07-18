@@ -13,7 +13,7 @@ static int	ft_ptrlen(t_unll nbr)
 	return (len);
 }
 
-static int	ft_ptr(t_unll nbr)
+static int	ft_ptrmake(t_unll nbr)
 {
 	ssize_t	bytes;
 
@@ -56,7 +56,7 @@ int	ft_ptr(t_unll nbr)
 	}
 	else
 	{
-		bytes = ft_ptr(nbr);
+		bytes = ft_ptrmake(nbr);
 		if (bytes == -1)
 			return (-1);
 	}

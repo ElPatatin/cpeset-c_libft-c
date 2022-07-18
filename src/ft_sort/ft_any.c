@@ -1,6 +1,6 @@
 #include "../../inc/lib_ft.h"
 
-int	ft_any(char **tab, int(*f)(char *))
+int	ft_any(char **tab, int (*f)(char *))
 {
 	while (*tab)
 	{

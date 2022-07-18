@@ -7,19 +7,19 @@ void	ft_lstsort_insert(t_list **begin_list, void *data, int (*cmp)())
 
 	current = *begin_list;
 	elt = ft_lstnew_elt(data);
-	if (!current)s
+	if (!current)
 	{
-		*begin_list = elem;
+		*begin_list = elt;
 		return ;
 	}
-	if ((*cmp)(elem->data, current->data) < 0)
+	if ((*cmp)(elt->data, current->data) < 0)
 	{
-		elem->next = current;
-		*begin_list = elem;
+		elt->next = current;
+		*begin_list = elt;
 		return ;
 	}
-	while (current->next && (*cmp)(elem->data, current->next->data) > 0)
+	while (current->next && (*cmp)(elt->data, current->next->data) > 0)
 		current = current->next;
-	elem->next = current->next;
-	current->next = elem;
+	elt->next = current->next;
+	current->next = elt;
 }

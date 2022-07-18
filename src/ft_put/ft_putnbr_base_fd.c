@@ -29,7 +29,7 @@ int	ft_putnbr_base_fd(t_ll nbr, int base, int fd)
 			nbr = UINT_MAX + nbr + 1;
 	}
 	if (nbr >= base)
-		if (ft_putnbr(nbr / base, base, fd) == -1)
+		if (ft_putnbr_base_fd(nbr / base, base, fd) == -1)
 			return (-1);
 	if (write(fd, &str[nbr % base], sizeof(char)) != sizeof(char))
 		return (-1);

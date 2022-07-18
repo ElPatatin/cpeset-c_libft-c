@@ -12,7 +12,7 @@ void	ft_sort_str_tab(char **tab)
 		j = i;
 		while (j > 0 && ft_strcmp(tab[j - 1], tab[j]) > 0)
 		{
-			tmp = s[j - 1];
+			tmp = tab[j - 1];
 			tab[j - 1] = tab[j];
 			tab[j] = tmp;
 			j--;
