@@ -14,7 +14,17 @@
 
 t_list	*ft_lstat(t_list *begin_list, t_unt nbr)
 {
-	while (nbr-- > 0 && begin_list)
-		begin_list = begin_list->next;
-	return (begin_list);
+	t_list	*current;
+	t_unt	idx;
+
+	current = begin_list;
+	idx = 0;
+	while (i < nbr)
+	{
+		if (!current)
+			return (NULL);
+		current = current->next;
+		++i;
+	}
+	return (current);
 }
