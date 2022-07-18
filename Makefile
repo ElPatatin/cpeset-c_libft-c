@@ -55,12 +55,13 @@ GNL_DIR	= ft_gnl/
 
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-LIB_FUN = $(INC_DIR)lib_ft.h
-LIB_LST = $(INC_DIR)lib_list.h
-LIB_PRN = $(INC_DIR)lib_ft_printf.h
-LIB_GNL = $(INC_DIR)lib_ft_gnl.h
+# LIB_FUN = $(INC_DIR)lib_ft.h
+# LIB_LST = $(INC_DIR)lib_list.h
+# LIB_PRN = $(INC_DIR)lib_ft_printf.h
+# LIB_GNL = $(INC_DIR)lib_ft_gnl.h
+HDRS	= $(INC_DIR)
 
-INCLUDE	= -I $(LIB_FUN) $(LIB_LST) $(LIB_PRN) $(LIB_GNL)
+INCLUDE	= -I $(HDRS)
 
 FIS_SRC	= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 		ft_islower.c ft_isupper.c ft_isprint.c ft_isspace.c
