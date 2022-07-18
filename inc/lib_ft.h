@@ -21,6 +21,7 @@
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <sys/errno.h>
+# include <sys/wait.h>
 
 # define TURE   (int)0
 # define FALSE  (int)1
