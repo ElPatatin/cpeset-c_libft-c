@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/18 17:49:46 by cpeset-c          #+#    #+#             */
+/*   Updated: 2022/07/18 17:50:25 by cpeset-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/lib_ft.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 {
-	unsigned int	src_s;
-	unsigned int	dest_s;
-	unsigned int	i;
+	t_unt	src_s;
+	t_unt	dest_s;
+	t_unt	i;
 
 	src_s = ft_strlen(src);
 	dest_s = ft_strlen(dest);

@@ -26,10 +26,10 @@
 # define FALSE  (int)1
 
 typedef unsigned long long	t_unll;
-typedef int				t_bool;
-typedef unsigned long	t_ul;
-typedef long long		t_ll;
-typedef unsigned int	t_unt;
+typedef int					t_bool;
+typedef unsigned long		t_ul;
+typedef long long			t_ll;
+typedef unsigned int		t_unt;
 
 // FT_is functions. Return 1 if true, return 0 if false
 int		ft_isalpha(int c);
@@ -88,7 +88,7 @@ int		*ft_map(int *tab, int lenght, int (*f)(int));
 int		ft_any(char **tab, int (*f)(char *));
 int		ft_count_if(char **tab, int lenght, int (*f)(char *));
 void	ft_sort_str_tab(char **tab);
-void	ft_adv_sort_string_tab(char **tab, int (*cmp)(char *, char *));
+void	ft_adv_sort_str_tab(char **tab, int (*cmp)(char *, char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	**ft_split(char const *s, char c);

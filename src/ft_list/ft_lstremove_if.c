@@ -1,13 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstremove_if.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/18 17:16:28 by cpeset-c          #+#    #+#             */
+/*   Updated: 2022/07/18 17:16:29 by cpeset-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/lib_list.h"
 
-void	ft_lstremove_if(t_list **begin_list, void *data_ref, int (*cmp)(), void (*free_fct)(void *))
+void	ft_lstremove_if(t_list **begin_list, void *data_ref, int (*cmp)(),
+			void (*free_fct)(void *))
 {
 	t_list	*current;
 	t_list	*tmp;
 	t_list	*pre;
 
-	if (!begin_list || !*begin_list || !data_ref)
-		return ;
 	pre = NULL;
 	current = *begin_list;
 	while (current)

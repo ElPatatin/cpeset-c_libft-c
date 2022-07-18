@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstreverse_fun.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/18 17:16:42 by cpeset-c          #+#    #+#             */
+/*   Updated: 2022/07/18 17:16:44 by cpeset-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/lib_list.h"
 
 void	ft_lstreverse_fun(t_list *begin_list)
 {
 	void	*tmp;
-	t_unt		i;
-	t_unt		j;
+	t_unt	i;
+	t_unt	j;
 
 	i = 0;
-	j = ft_lstsize(begin_list);
+	j = ft_lstsize(begin_list) - 1;
 	while (j > i)
 	{
 		tmp = ft_lstat(begin_list, i)->data;

@@ -32,18 +32,21 @@ void	ft_lstpush_back(t_list **begin_list, void *data);
 t_list	*ft_lstpush_strs(int size, char **strs);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
-void	ft_lstremove_if(t_list **begin_list, void *data_ref, int (*cmp)(), void (*free_fct)(void *));
+void	ft_lstremove_if(t_list **begin_list, void *data_ref, int (*cmp)(),
+			void (*free_fct)(void *));
 t_list	*ft_lstat(t_list *begin_list, t_unt nbr);
 void	ft_lstreverse(t_list **begin_list);
 void	ft_lstreverse_fun(t_list *begin_list);
 void	ft_lstforeach(t_list *begin_list, void (*f)(void *));
-void	ft_lstforeach_if(t_list *begin_list, void (*f)(void *), void *data_ref, int (*cmp)());
+void	ft_lstforeach_if(t_list *begin_list, void (*f)(void *),
+			void *data_ref, int (*cmp)());
 t_list	*ft_lstfind(t_list *begin_list, void *data_ref, int (*cmp)());
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_lstswap(t_list *a, t_list *b);
 void	ft_lstsort(t_list **begin_list, int (*cmp)());
 void	ft_lstsort_insert(t_list **begin_list, void *data, int (*cmp)());
 void	ft_lstmerge(t_list **begin_list1, t_list *begin_list2);
-void	ft_lstmerge_sort(t_list **begin_list1, t_list *begin_list2, int (*cmp)());
+void	ft_lstmerge_sort(t_list **begin_list1, t_list *begin_list2,
+			int (*cmp)());
 
 #endif

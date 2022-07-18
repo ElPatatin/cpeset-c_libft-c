@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_adv_sort_str_tab.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/18 17:42:55 by cpeset-c          #+#    #+#             */
+/*   Updated: 2022/07/18 17:43:12 by cpeset-c         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/lib_ft.h"
 
-void	ft_adv_sort_string_tab(char **tab, int (*cmp)(char *, char *))
+void	ft_adv_sort_str_tab(char **tab, int (*cmp)(char *, char *))
 {
 	int		i;
 	int		j;
