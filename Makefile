@@ -141,7 +141,7 @@ clean:
 	@echo "$(BLUE)	Libft object files cleaned.$(DEF_COLOR)"
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) ./*.out
 	@echo "$(CYAN)	Libft executable files cleaned.$(DEF_COLOR)"
 
 re: fclean all
