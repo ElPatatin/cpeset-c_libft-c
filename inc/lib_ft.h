@@ -100,7 +100,7 @@ char	*ft_strchr(char *s, int c);
 int		ft_str_wcount(char const *s, char c);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strcpy(char *dst, char *src);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcpy(char *dst, const char *src, ssize_t dstsize);
 size_t	ft_strlcat(char *dest, const char *src, size_t dstsize);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strcmp(char *s1, char *s2);
