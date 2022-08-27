@@ -6,11 +6,11 @@
 /*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:35:34 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:38:30 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/08/27 22:58:19 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft_gnl.h"
+#include "../inc/libgnl.h"
 
 char	*ft_read_save(int fd, char *buffer)
 {

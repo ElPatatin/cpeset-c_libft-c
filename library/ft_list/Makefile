@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/07 12:16:37 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/08/27 23:02:41 by cpeset-c         ###   ########.fr        #
+#    Created: 2022/08/27 22:52:50 by cpeset-c          #+#    #+#              #
+#    Updated: 2022/08/27 22:59:36 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # -=-=-=-=-	NAME -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-NAME		= libprintf.a
+NAME		= liblist.a
 
 # -=-=-=-=-	CLRS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
@@ -37,24 +37,21 @@ CP		= cp -f
 # -=-=-=-=-	PATH -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
 SRC_DIR	= src/
-UTL_DIR	= utils/
 OBJ_DIR	= obj/
 INC_DIR	= inc/
 
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-INCLUDE		= -I $(INC_DIR)ft_printf.h
+INCLUDE		= -I $(INC_DIR)liblist.h
 
-PRT_SRC		= ft_printf.c \
-		ft_checker.c
+LST_SRC	= ft_lstadd_back.c ft_lstadd_front.c ft_lstat.c ft_lstclear.c \
+		ft_lstdelone.c ft_lstfind.c ft_lstforeach.c ft_lstforeach_if.c \
+		ft_lstlast.c ft_lstmap.c ft_lstmerge.c ft_lstmerge_sort.c \
+		ft_lstnew.c ft_lstnew_elt.c ft_lstpush_back.c ft_lstpush_front.c \
+		ft_lstpush_strs.c ft_lstremove_if.c ft_lstreverse.c ft_lstreverse_fun.c \
+		ft_lstsize.c ft_lstsort.c ft_lstsort_insert.c ft_lstswap.c
 
-PRT_UTL		= ft_char_utils.c \
-		ft_nbrs_utils.c \
-		ft_vptr.c \
-		ft_width.c
-
-SRCS	+=	$(addprefix $(SRC_DIR), $(PRT_SRC))
-SRCS	+=	$(addprefix $(UTL_DIR), $(PRT_UTL))
+SRCS	+= $(addprefix $(SRC_DIR), $(LST_SRC))
 
 OBJS	= $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
 DEPS	= $(addsuffix .d, $(basename $(OBJS)))
@@ -63,18 +60,18 @@ DEPS	= $(addsuffix .d, $(basename $(OBJS)))
 
 $(OBJ_DIR)%.o: $(SRCS_DIR)%.c
 	@$(MD) $(dir $@)
-	@echo "$(RED)	Compiling: $(YELLOW)$< $(DEF_COLOR)"
+	@echo "$(GREEN)	Compiling: $(YELLOW)$< $(DEF_COLOR)"
 	@$(CC) -MT $@ -MMD -MP $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBS)
 	@$(AR) $(NAME) $(OBJS)
-	@echo "$(CYAN)	Printf lib compiled!$(DEF_COLOR)"
+	@echo "$(CYAN)	List lib compiled!$(DEF_COLOR)"
 
 clean:
 	@$(RM) -r $(OBJ_DIR)
-	@echo "$(BLUE)	Printf object files cleaned.$(DEF_COLOR)"
+	@echo "$(BLUE)	List function object files cleaned.$(DEF_COLOR)"
 
 fclean:	clean
 	@$(RM) $(NAME)
@@ -82,7 +79,7 @@ fclean:	clean
 
 re:	fclean	all
 	@echo ""
-	@echo "$(GREEN)	Cleaned and rebuilt everything for printf lib.$(DEF_COLOR)"
+	@echo "$(GREEN)	Cleaned and rebuilt everything for list lib.$(DEF_COLOR)"
 
 -include $(DEPS)
 

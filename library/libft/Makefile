@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/27 19:35:19 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/08/27 19:51:04 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/08/27 22:37:16 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,12 +40,12 @@ SRC_DIR	= src/
 OBJ_DIR	= obj/
 INC_DIR	= inc/
 
-FIS_DIR	= ft_is/
-MTH_DIR = ft_math/
-MEM_DIR	= ft_mem/
-PUT_DIR	= ft_put/
-SRT_DIR	= ft_sort/
-STR_DIR	= ft_str/
+FIS_DIR	= $(SRC_DIR)ft_is/
+MTH_DIR = $(SRC_DIR)ft_math/
+MEM_DIR	= $(SRC_DIR)ft_mem/
+PUT_DIR	= $(SRC_DIR)ft_put/
+SRT_DIR	= $(SRC_DIR)ft_sort/
+STR_DIR	= $(SRC_DIR)ft_str/
 
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
@@ -98,11 +98,11 @@ all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBS)
 	@$(AR) $(NAME) $(OBJS)
-	@echo "$(CYAN)	Printf lib compiled!$(DEF_COLOR)"
+	@echo "$(CYAN)	Function library 'libft' compiled!$(DEF_COLOR)"
 
 clean:
 	@$(RM) -r $(OBJ_DIR)
-	@echo "$(BLUE)	Printf object files cleaned.$(DEF_COLOR)"
+	@echo "$(BLUE)	Libft object files cleaned.$(DEF_COLOR)"
 
 fclean:	clean
 	@$(RM) $(NAME)
@@ -110,7 +110,7 @@ fclean:	clean
 
 re:	fclean	all
 	@echo ""
-	@echo "$(GREEN)	Cleaned and rebuilt everything for printf lib.$(DEF_COLOR)"
+	@echo "$(GREEN)	Cleaned and rebuilt everything for libft.$(DEF_COLOR)"
 
 -include $(DEPS)
 

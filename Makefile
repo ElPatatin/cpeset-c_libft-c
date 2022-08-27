@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/16 16:24:27 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/08/27 21:06:46 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/08/27 23:03:36 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,7 +93,7 @@ makelibft:
 makelists:
 	@make -C $(LST_DIR)
 
-makepintf:
+makeprintf:
 	@make -C $(PRN_DIR)
 
 makegnl:
