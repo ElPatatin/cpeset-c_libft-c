@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:50:34 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:31:55 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/08/28 19:13:41 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlcpy(char *dst, const char *src, ssize_t dstsize)
 {
 	ssize_t	i;
 	t_unt	len;
-	
+
 	i = -1;
 	len = ft_strlen(src);
 	if (!dstsize)

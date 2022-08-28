@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 12:46:39 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/08/27 19:33:25 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/08/28 19:13:06 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,20 +44,20 @@ typedef struct s_vars
 }			t_vars;
 
 // Función principal del printf
-int	ft_printf(const char *fmt, ...);
+int		ft_printf(const char *fmt, ...);
 
 // Funciones auxiliares del printf -> dirigen las inputs y las flags.
-int	ft_check(t_vars *vars);
-int	ft_print_check(t_vars *vars);
+int		ft_check(t_vars *vars);
+int		ft_print_check(t_vars *vars);
 
 // Utilidades del printf
-int	ft_char(int c);
-int	ft_string(char *str);
-int	ft_nbrbase(int n, int base, char c);
-int	ft_vptr(t_unll arg);
+int		ft_char(int c);
+int		ft_string(char *str);
+int		ft_nbrbase(int n, int base, char c);
+int		ft_vptr(t_unll arg);
 
 // Utilidades bonus del printf
-void	ft_width(t_vars *vars,  t_flags *flags);
+void	ft_width(t_vars *vars, t_flags *flags);
 void	ft_width_zero(t_vars *vars, t_flags *flags);
 
 #endif
