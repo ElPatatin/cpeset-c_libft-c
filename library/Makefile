@@ -6,13 +6,13 @@
 #    By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/16 16:24:27 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/08/28 18:47:56 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/08/28 18:57:17 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # -=-=-=-=-	NAME -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-NAME	=	lib.a
+NAME	=	lib*.a
 
 # -=-=-=-=-	CLRS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
@@ -65,19 +65,19 @@ gnl: makelibft makegnl
 
 makelibft:
 	@make -C $(LIB_DIR)
-	$(MV) $(LIBFT) .
+	$(CP) $(LIBFT) .
 
 makelists:
 	@make -C $(LST_DIR)
-	$(MV) $(LISTS) .
+	$(CP) $(LISTS) .
 
 makeprintf:
 	@make -C $(PRN_DIR)
-	$(MV) $(PRINTF) .
+	$(CP) $(PRINTF) .
 
 makegnl:
 	@make -C $(GNL_DIR)
-	$(MV) $(FUNGNL) .
+	$(CP) $(FUNGNL) .
 
 clean:
 	@$(RM) -r $(OBJ_DIR)
