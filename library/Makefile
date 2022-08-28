@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/16 16:24:27 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/08/28 18:57:17 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/08/28 19:22:52 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,19 +65,19 @@ gnl: makelibft makegnl
 
 makelibft:
 	@make -C $(LIB_DIR)
-	$(CP) $(LIBFT) .
+	@$(CP) $(LIBFT) .
 
 makelists:
 	@make -C $(LST_DIR)
-	$(CP) $(LISTS) .
+	@$(CP) $(LISTS) .
 
 makeprintf:
 	@make -C $(PRN_DIR)
-	$(CP) $(PRINTF) .
+	@$(CP) $(PRINTF) .
 
 makegnl:
 	@make -C $(GNL_DIR)
-	$(CP) $(FUNGNL) .
+	@$(CP) $(FUNGNL) .
 
 clean:
 	@$(RM) -r $(OBJ_DIR)
