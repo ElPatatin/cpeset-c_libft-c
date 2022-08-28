@@ -6,13 +6,13 @@
 #    By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/16 16:24:27 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/08/27 23:03:36 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/08/28 18:47:56 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # -=-=-=-=-	NAME -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-NAME	=	libft.a
+NAME	=	lib.a
 
 # -=-=-=-=-	CLRS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
@@ -33,45 +33,21 @@ AR		= ar -rcs
 RM		= rm -f
 MD		= mkdir -p
 CP		= cp -f
+MV		= mv -f
 
 # -=-=-=-=-	PATH -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-CLIFT	= library/
-
-LIB_DIR	= $(CLIFT)libft/
-LST_DIR	= $(CLIFT)ft_list/
-PRN_DIR	= $(CLIFT)ft_printf/
-GNL_DIR	= $(CLIFT)ft_gnl/
-
-SRC_DIR	= src/
-OBJ_DIR	= obj/
-INC_DIR	= inc/
+LIB_DIR	= libft/
+LST_DIR	= ft_list/
+PRN_DIR	= ft_printf/
+GNL_DIR	= ft_gnl/
 
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-# HDRS	= $(INC_DIR)
-# INCLUDE	= -I $(HDRS)
-
-
-
-# LST_SRC	= ft_lstadd_back.c ft_lstadd_front.c ft_lstat.c ft_lstclear.c \
-# 		ft_lstdelone.c ft_lstfind.c ft_lstforeach.c ft_lstforeach_if.c \
-# 		ft_lstlast.c ft_lstmap.c ft_lstmerge.c ft_lstmerge_sort.c \
-# 		ft_lstnew.c ft_lstnew_elt.c ft_lstpush_back.c ft_lstpush_front.c \
-# 		ft_lstpush_strs.c ft_lstremove_if.c ft_lstreverse.c ft_lstreverse_fun.c \
-# 		ft_lstsize.c ft_lstsort.c ft_lstsort_insert.c ft_lstswap.c
-
-# PRN_SRC	= ft_printf.c ft_char_utils.c ft_nbrs_utils.c ft_ptr_utils.c
-
-# GNL_SRC	= get_next_line.c
-
-
-# SRCS	+= $(addprefix $(LST_DIR), $(LST_SRC))
-# SRCS	+= $(addprefix $(PRN_DIR), $(PRN_SRC))
-# SRCS	+= $(addprefix $(GNL_DIR), $(GNL_SRC))
-
-# OBJS	= $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
-# DEP		= $(addsuffix .d, $(basename $(OBJS)))
+LIBFT	= $(LIB_DIR)libft.a
+LISTS	= $(LST_DIR)liblist.a
+PRINTF	= $(PRN_DIR)libprintf.a
+FUNGNL	= $(GNL_DIR)libgnl.a
 
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
@@ -89,15 +65,19 @@ gnl: makelibft makegnl
 
 makelibft:
 	@make -C $(LIB_DIR)
+	$(MV) $(LIBFT) .
 
 makelists:
 	@make -C $(LST_DIR)
+	$(MV) $(LISTS) .
 
 makeprintf:
 	@make -C $(PRN_DIR)
+	$(MV) $(PRINTF) .
 
 makegnl:
 	@make -C $(GNL_DIR)
+	$(MV) $(FUNGNL) .
 
 clean:
 	@$(RM) -r $(OBJ_DIR)
