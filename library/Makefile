@@ -12,7 +12,7 @@
 
 # -=-=-=-=-	NAME -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-NAME	=	lib*.a
+NAME	=	lib.a
 
 # -=-=-=-=-	CLRS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
@@ -65,19 +65,19 @@ gnl: makelibft makegnl
 
 makelibft:
 	@make -C $(LIB_DIR)
-	@$(CP) $(LIBFT) .
+	@$(CP) $(LIBFT) ./$(NAME)
 
 makelists:
 	@make -C $(LST_DIR)
-	@$(CP) $(LISTS) .
+	@cat $(LISTS) >> $(NAME)
 
 makeprintf:
 	@make -C $(PRN_DIR)
-	@$(CP) $(PRINTF) .
+	@cat $(PRINTF) >> $(NAME)
 
 makegnl:
 	@make -C $(GNL_DIR)
-	@$(CP) $(FUNGNL) .
+	@cat $(FUNGNL) >> $(NAME)
 
 clean:
 	@$(RM) -r $(OBJ_DIR)

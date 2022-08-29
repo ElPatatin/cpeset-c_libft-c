@@ -54,10 +54,8 @@ static int	ft_ptr(t_unll nbr)
 
 int	ft_vptr(t_unll nbr)
 {
-	int		len;
 	ssize_t	bytes;
 
-	len = 0;
 	if (write(STDOUT_FILENO, "0x", 2) != 2)
 		return (-1);
 	if (nbr == 0)

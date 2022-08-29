@@ -43,7 +43,7 @@ INC_DIR	= inc/
 
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-INCLUDE		= -I $(INC_DIR)ft_printf.h
+INCLUDE		= -I $(INC_DIR)
 
 PRT_SRC		= ft_printf.c \
 		ft_checker.c

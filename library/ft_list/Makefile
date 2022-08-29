@@ -42,7 +42,7 @@ INC_DIR	= inc/
 
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-INCLUDE		= -I $(INC_DIR)liblist.h
+INCLUDE		= -I $(INC_DIR)
 
 LST_SRC	= ft_lstadd_back.c ft_lstadd_front.c ft_lstat.c ft_lstclear.c \
 		ft_lstdelone.c ft_lstfind.c ft_lstforeach.c ft_lstforeach_if.c \

@@ -49,7 +49,7 @@ STR_DIR	= $(SRC_DIR)ft_str/
 
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-INCLUDE		= -I $(INC_DIR)libft.h
+INCLUDE		= -I $(INC_DIR)
 
 FIS_SRC	= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 		ft_islower.c ft_isupper.c ft_isprint.c ft_isspace.c

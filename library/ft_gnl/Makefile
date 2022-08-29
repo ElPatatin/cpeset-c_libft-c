@@ -42,7 +42,7 @@ INC_DIR	= inc/
 
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-INCLUDE		= -I $(INC_DIR)libgnl.h
+INCLUDE		= -I $(INC_DIR)
 
 GNL_SRC	= get_next_line.c
 
