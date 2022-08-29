@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/27 22:52:56 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/08/27 22:59:23 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/08/29 18:55:55 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ INC_DIR	= inc/
 
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
+LIBS		= ../ft_printf/libprintf.a
 INCLUDE		= -I $(INC_DIR)
 
 GNL_SRC	= get_next_line.c
@@ -53,7 +54,7 @@ DEPS	= $(addsuffix .d, $(basename $(OBJS)))
 
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-$(OBJ_DIR)%.o: $(SRCS_DIR)%.c
+$(OBJ_DIR)%.o: $(SRCS_DIR)%.c Makefile
 	@$(MD) $(dir $@)
 	@echo "$(MAGENTA)	Compiling: $(YELLOW)$< $(DEF_COLOR)"
 	@$(CC) -MT $@ -MMD -MP $(CFLAGS) $(INCLUDE) -c $< -o $@
@@ -61,6 +62,7 @@ $(OBJ_DIR)%.o: $(SRCS_DIR)%.c
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBS)
+	@$(CP) $(LIBS) ./$(NAME)
 	@$(AR) $(NAME) $(OBJS)
 	@echo "$(CYAN)	Get Next Line compiled!$(DEF_COLOR)"
 

@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/16 16:24:27 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/08/28 19:22:52 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/08/29 18:55:59 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ MV		= mv -f
 
 # -=-=-=-=-	PATH -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
+LIBRARY	= library/
 LIB_DIR	= libft/
 LST_DIR	= ft_list/
 PRN_DIR	= ft_printf/
@@ -52,32 +53,28 @@ FUNGNL	= $(GNL_DIR)libgnl.a
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
 all: makelibft makelists makeprintf makegnl
+	@$(CP) $(FUNGNL) ./$(NAME)
+# libft: makelibft
 
-libft: makelibft
+# lists: makelibft makelists
 
-lists: makelibft makelists
+# printf: makelibft makeprintf
 
-printf: makelibft makeprintf
-
-gnl: makelibft makegnl
+# gnl: makelibft makegnl
 
 #-=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=- #
 
 makelibft:
 	@make -C $(LIB_DIR)
-	@$(CP) $(LIBFT) ./$(NAME)
 
 makelists:
 	@make -C $(LST_DIR)
-	@cat $(LISTS) >> $(NAME)
 
 makeprintf:
 	@make -C $(PRN_DIR)
-	@cat $(PRINTF) >> $(NAME)
 
 makegnl:
 	@make -C $(GNL_DIR)
-	@cat $(FUNGNL) >> $(NAME)
 
 clean:
 	@$(RM) -r $(OBJ_DIR)

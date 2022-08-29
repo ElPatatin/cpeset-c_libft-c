@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 12:16:37 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/08/27 23:02:41 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/08/29 18:48:11 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ INC_DIR	= inc/
 
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
+LIBS		= ../ft_list/liblist.a
 INCLUDE		= -I $(INC_DIR)
 
 PRT_SRC		= ft_printf.c \
@@ -61,7 +62,7 @@ DEPS	= $(addsuffix .d, $(basename $(OBJS)))
 
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-$(OBJ_DIR)%.o: $(SRCS_DIR)%.c
+$(OBJ_DIR)%.o: $(SRCS_DIR)%.c Makefile
 	@$(MD) $(dir $@)
 	@echo "$(RED)	Compiling: $(YELLOW)$< $(DEF_COLOR)"
 	@$(CC) -MT $@ -MMD -MP $(CFLAGS) $(INCLUDE) -c $< -o $@
@@ -69,6 +70,7 @@ $(OBJ_DIR)%.o: $(SRCS_DIR)%.c
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBS)
+	@$(CP) $(LIBS) ./$(NAME)
 	@$(AR) $(NAME) $(OBJS)
 	@echo "$(CYAN)	Printf lib compiled!$(DEF_COLOR)"
 

@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/27 22:52:50 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/08/27 22:59:36 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/08/29 18:48:18 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ INC_DIR	= inc/
 
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
+LIBS		= ../libft/libft.a
 INCLUDE		= -I $(INC_DIR)
 
 LST_SRC	= ft_lstadd_back.c ft_lstadd_front.c ft_lstat.c ft_lstclear.c \
@@ -58,7 +59,7 @@ DEPS	= $(addsuffix .d, $(basename $(OBJS)))
 
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-$(OBJ_DIR)%.o: $(SRCS_DIR)%.c
+$(OBJ_DIR)%.o: $(SRCS_DIR)%.c Makefile
 	@$(MD) $(dir $@)
 	@echo "$(GREEN)	Compiling: $(YELLOW)$< $(DEF_COLOR)"
 	@$(CC) -MT $@ -MMD -MP $(CFLAGS) $(INCLUDE) -c $< -o $@
@@ -66,6 +67,7 @@ $(OBJ_DIR)%.o: $(SRCS_DIR)%.c
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBS)
+	@$(CP) $(LIBS) ./$(NAME)
 	@$(AR) $(NAME) $(OBJS)
 	@echo "$(CYAN)	List lib compiled!$(DEF_COLOR)"
 
