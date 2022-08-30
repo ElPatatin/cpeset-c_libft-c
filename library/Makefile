@@ -6,25 +6,13 @@
 #    By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/16 16:24:27 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/08/29 18:55:59 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/08/30 11:11:32 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # -=-=-=-=-	NAME -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
 NAME	=	lib.a
-
-# -=-=-=-=-	CLRS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
-
-DEF_COLOR := \033[0;39m
-GRAY := \033[0;90m
-RED := \033[0;91m
-GREEN := \033[0;92m
-YELLOW := \033[0;93m
-BLUE := \033[0;94m
-MAGENTA := \033[0;95m
-CYAN := \033[0;96m
-WHITE := \033[0;97m
 
 # -=-=-=-=-	CMND -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
@@ -40,7 +28,7 @@ MV		= mv -f
 LIBRARY	= library/
 LIB_DIR	= libft/
 LST_DIR	= ft_list/
-PRN_DIR	= ft_printf/
+PNT_DIR	= ft_printf/
 GNL_DIR	= ft_gnl/
 
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
@@ -54,6 +42,7 @@ FUNGNL	= $(GNL_DIR)libgnl.a
 
 all: makelibft makelists makeprintf makegnl
 	@$(CP) $(FUNGNL) ./$(NAME)
+
 # libft: makelibft
 
 # lists: makelibft makelists
@@ -71,7 +60,7 @@ makelists:
 	@make -C $(LST_DIR)
 
 makeprintf:
-	@make -C $(PRN_DIR)
+	@make -C $(PNT_DIR)
 
 makegnl:
 	@make -C $(GNL_DIR)
@@ -80,14 +69,14 @@ clean:
 	@$(RM) -r $(OBJ_DIR)
 	@make clean -C $(LIB_DIR)
 	@make clean -C $(LST_DIR)
-	@make clean -C $(PRN_DIR)
+	@make clean -C $(PNT_DIR)
 	@make clean -C $(GNL_DIR)
 
 fclean: clean
 	@$(RM) $(NAME) ./*.out
 	@make fclean -C $(LIB_DIR)
 	@make fclean -C $(LST_DIR)
-	@make fclean -C $(PRN_DIR)
+	@make fclean -C $(PNT_DIR)
 	@make fclean -C $(GNL_DIR)
 
 re: fclean all
