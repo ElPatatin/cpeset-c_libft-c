@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 12:16:37 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/10/07 07:10:25 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/10/07 09:47:22 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,13 +47,11 @@ INC_DIR	= inc/
 LIBS		= ../lib.a
 INCLUDE		= -I $(INC_DIR)
 
-PRT_SRC		= ft_printf.c \
-		ft_checker.c
+PRT_SRC		= ft_printf.c
 
 PRT_UTL		= ft_char_utils.c \
 		ft_nbrs_utils.c \
-		ft_vptr.c \
-		ft_width.c
+		ft_vptr.c
 
 SRCS	+=	$(addprefix $(SRC_DIR), $(PRT_SRC))
 SRCS	+=	$(addprefix $(UTL_DIR), $(PRT_UTL))
