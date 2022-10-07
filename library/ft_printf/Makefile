@@ -3,32 +3,33 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+         #
+#    By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/07 12:16:37 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/08/29 18:48:11 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/10/07 07:10:25 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # -=-=-=-=-	NAME -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
 NAME		= libprintf.a
+MKFL		= Makefile
 
 # -=-=-=-=-	CLRS -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-DEF_COLOR := \033[0;39m
-GRAY := \033[0;90m
-RED := \033[0;91m
-GREEN := \033[0;92m
-YELLOW := \033[0;93m
-BLUE := \033[0;94m
-MAGENTA := \033[0;95m
-CYAN := \033[0;96m
-WHITE := \033[0;97m
+DEF_COLOR	:= \033[0;39m
+GRAY		:= \033[0;90m
+RED			:= \033[0;91m
+GREEN		:= \033[0;92m
+YELLOW		:= \033[0;93m
+BLUE		:= \033[0;94m
+MAGENTA		:= \033[0;95m
+CYAN		:= \033[0;96m
+WHITE		:= \033[0;97m
 
 # -=-=-=-=-	CMND -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-CFLAGS		= -Wall -Werror -Wextra -g
+CFLAGS	= -Wall -Werror -Wextra -W -O3 -Ofast
 AR		= ar rcs
 RM		= rm -f
 MD		= mkdir -p
@@ -43,7 +44,7 @@ INC_DIR	= inc/
 
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-LIBS		= ../ft_list/liblist.a
+LIBS		= ../lib.a
 INCLUDE		= -I $(INC_DIR)
 
 PRT_SRC		= ft_printf.c \
@@ -62,17 +63,17 @@ DEPS	= $(addsuffix .d, $(basename $(OBJS)))
 
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-$(OBJ_DIR)%.o: $(SRCS_DIR)%.c Makefile
+$(OBJ_DIR)%.o: $(SRCS_DIR)%.c $(MKFL)
 	@$(MD) $(dir $@)
-	@echo "$(RED)	Compiling: $(YELLOW)$< $(DEF_COLOR)"
+	@printf "$(WHITE)\r\tCompiling: $(YELLOW)$<$(DEF_COLOR)                           \r"
 	@$(CC) -MT $@ -MMD -MP $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LIBS)
+$(NAME): $(OBJS)
 	@$(CP) $(LIBS) ./$(NAME)
 	@$(AR) $(NAME) $(OBJS)
-	@echo "$(CYAN)	Printf lib compiled!$(DEF_COLOR)"
+	@printf "$(CYAN)\n\tThe library $(GREEN)'printf'$(CYAN) has been compiled!\n$(DEF_COLOR)"
 
 clean:
 	@$(RM) -r $(OBJ_DIR)

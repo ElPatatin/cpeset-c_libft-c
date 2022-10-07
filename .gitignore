@@ -1,8 +1,60 @@
-*.o
-*.a
 *.d
-*.gch
+.vscode
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
 obj/
-.cache_exist
+.out
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+*.swp
+libft.a
+libprintf.a
+lingnl.a
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+main.c
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
 .DS_Store
 ._.DS_Store
+modules.order
+Module.symvers
+Mkfile.old
