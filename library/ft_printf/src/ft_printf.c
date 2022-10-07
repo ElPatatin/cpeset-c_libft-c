@@ -6,14 +6,14 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:32:26 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/07 09:47:42 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/07 09:54:27 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
 static t_vars	ft_init_vars(const char *fmt);
-static int		ft_print_check(t_vars *vars);
+static int		ft_check(t_vars *vars);
 
 int	ft_printf(const char *fmt, ...)
 {
@@ -43,7 +43,7 @@ int	ft_printf(const char *fmt, ...)
 }
 
 static int
-	ft_print_check(t_vars *vars)
+	ft_check(t_vars *vars)
 {
 	if (vars->c == '%')
 		return (ft_char('%'));
@@ -64,7 +64,8 @@ static int
 	return (1);
 }
 
-static t_vars	ft_init_vars(const char *fmt)
+static
+	t_vars	ft_init_vars(const char *fmt)
 {
 	t_vars	vars;
 
