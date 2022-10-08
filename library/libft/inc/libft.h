@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:08:37 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/07 05:52:27 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/09 00:17:24 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ int		ft_find_next_prime(int nb);
 t_ll	ft_absval(t_ll n);
 int		ft_nbrlen(t_ll nbr);
 int		ft_nbrlen_base(t_ll nbr, int base);
-int		ft_atoi(const char *str);
-int		ft_atoi_base(const char *str, int base);
+t_ll	ft_atoi(const char *str);
+t_ll	ft_atoi_base(const char *str, int base);
 char	*ft_itoa(int nbr);
 char	*ft_itoa_base(int nbr, int base);
 

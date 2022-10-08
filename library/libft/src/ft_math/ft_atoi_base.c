@@ -6,16 +6,16 @@
 /*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 19:59:52 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/07 05:55:31 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/10/09 00:16:58 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-int
+t_ll
 	ft_atoi_base(const char *str, int base)
 {
-	int	res;
+	t_ll	res;
 	int	neg;
 
 	neg = 1;
