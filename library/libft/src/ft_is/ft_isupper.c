@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:22:03 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/07 05:51:07 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:44:09 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-int
+t_bool
 	ft_isupper(int c)
 {
 	if (c >= 'A' && c <= 'Z')

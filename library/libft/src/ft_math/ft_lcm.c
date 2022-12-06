@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lcm.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:40:16 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/07 05:56:20 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:11:07 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
 t_unt
 	ft_lcm(t_unt a, t_unt b)

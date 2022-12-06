@@ -19,8 +19,7 @@ obj/
 *.pch
 *.swp
 libft.a
-libprintf.a
-lingnl.a
+liboutput.a
 
 # Libraries
 *.lib

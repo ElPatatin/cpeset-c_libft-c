@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_issign.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 05:49:45 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/09 00:35:16 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:44:04 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
-int
+t_bool
 	ft_issign(int c)
 {
 	if (c == '-' || c == '+')

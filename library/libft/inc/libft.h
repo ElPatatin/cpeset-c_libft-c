@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:08:37 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/09 00:17:24 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:39:55 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,26 +23,40 @@
 # include <sys/errno.h>
 # include <sys/wait.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE	(int)1
+# endif
+
 # define TRUE	(int)1
 # define FALSE	(int)0
 # define UNUSED	(void)
 
-typedef unsigned long long	t_unll;
 typedef int					t_bool;
-typedef unsigned long		t_ul;
-typedef long long			t_ll;
 typedef unsigned int		t_unt;
+typedef long long			t_ll;
+typedef unsigned long		t_ul;
+typedef unsigned long long	t_ull;
+
+typedef struct s_list
+{
+	void				*data;
+	struct s_list		*next;
+}						t_list;
+
+// FT_GNL funtion. The get next line 42 project.
+char	*get_next_line(int fd);
 
 // FT_is functions. Return 1 if true, return 0 if false
-int		ft_isupper(int c);
-int		ft_islower(int c);
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isprint(int c);
-int		ft_isspace(int c);
-int		ft_issign(int c);
-int		ft_isascii(int c);
+t_bool	ft_isupper(int c);
+t_bool	ft_islower(int c);
+t_bool	ft_isalpha(int c);
+t_bool	ft_isdigit(int c);
+t_bool	ft_isalnum(int c);
+t_bool	ft_isprint(int c);
+t_bool	ft_isspace(int c);
+t_bool	ft_issign(int c);
+t_bool	ft_isascii(int c);
+t_bool	ft_ischrinstr(char *str);
 
 // FT_math functions. Multiple purpouse functions for operations.
 t_ll	ft_pow(t_ll n, t_unt pow);
@@ -54,10 +68,16 @@ int		ft_find_next_prime(int nb);
 t_ll	ft_absval(t_ll n);
 int		ft_nbrlen(t_ll nbr);
 int		ft_nbrlen_base(t_ll nbr, int base);
-t_ll	ft_atoi(const char *str);
-t_ll	ft_atoi_base(const char *str, int base);
+t_unt	ft_unbrlen_base(t_ull nbr, int base);
+int		ft_atoi(const char *str);
+int		ft_atoi_base(const char *str, char *str_base);
+t_ll	ft_atoll_base(const char *str, char *str_base);
 char	*ft_itoa(int nbr);
-char	*ft_itoa_base(int nbr, int base);
+char	*ft_itoa_base(int nbr, char *str_base);
+char	*ft_lltoa_base(t_ll nbr, char *str_base);
+char	*ft_ulltoa_base(t_ull nbr, char *str_base);
+t_ll	ft_stou(t_ll nbr);
+t_ull	ft_stoul(t_ull nbr);
 
 // FT_mem functions.
 void	*ft_memset(void *b, int c, size_t len);
@@ -115,5 +135,33 @@ char	*ft_strlowcase(char	*str);
 char	*ft_strupcase(char	*str);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+
+// FT_list functions. Recopilation of libft and piscine list functions.
+t_list	*ft_lstnew(void *data);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *begin_list);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstpush_front(t_list **begin_list, void *data);
+void	ft_lstpush_back(t_list **begin_list, void *data);
+t_list	*ft_lstpush_strs(int size, char **strs);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstremove_if(t_list **begin_list, void *data_ref, int (*cmp)(),
+			void (*free_fct)(void *));
+t_list	*ft_lstat(t_list *begin_list, t_unt nbr);
+void	ft_lstreverse(t_list **begin_list);
+void	ft_lstreverse_fun(t_list *begin_list);
+void	ft_lstforeach(t_list *begin_list, void (*f)(void *));
+void	ft_lstforeach_if(t_list *begin_list, void (*f)(void *),
+			void *data_ref, int (*cmp)());
+t_list	*ft_lstfind(t_list *begin_list, void *data_ref, int (*cmp)());
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+void	ft_lstswap(t_list *a, t_list *b);
+void	ft_lstsort(t_list **begin_list, int (*cmp)());
+void	ft_lstsort_insert(t_list **begin_list, void *data, int (*cmp)());
+void	ft_lstmerge(t_list **begin_list1, t_list *begin_list2);
+void	ft_lstmerge_sort(t_list **begin_list1, t_list *begin_list2,
+			int (*cmp)());
 
 #endif

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rrange.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:41:22 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/07 05:58:51 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:46:24 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
 int
 	*ft_rrange(int start, int end)

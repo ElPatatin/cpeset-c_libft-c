@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memfree.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:41:15 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/10/07 05:58:27 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/06 20:46:14 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "libft.h"
 
 char
 	**ft_memfree(char **ptr, int len)

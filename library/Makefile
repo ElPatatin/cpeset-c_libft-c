@@ -3,16 +3,12 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cpeset-c <cpeset-c@student.42barcel>       +#+  +:+       +#+         #
+#    By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/16 16:24:27 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/10/07 06:49:56 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/12/06 21:37:52 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-# -=-=-=-=-	NAME -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
-
-NAME	= lib.a
 
 # -=-=-=-=-	CMND -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
@@ -25,48 +21,38 @@ CP		= cp -f
 LIBRARY	= library/
 LIB_DIR	= libft/
 PNT_DIR	= ft_printf/
-GNL_DIR	= ft_gnl/
 
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
 LIBFT	= $(LIB_DIR)libft.a
 PRINTF	= $(PNT_DIR)libprintf.a
-FUNGNL	= $(GNL_DIR)libgnl.a
 
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-all: makelibft makeprintf makegnl
+all: makelibft makeprintf
 
 libft: makelibft
 
 printf: makelibft makeprintf
 
-gnl: makelibft makegnl
-
 #-=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=--=- #
 
 makelibft:
 	@make -C $(LIB_DIR)
-	@$(CP) $(LIBFT) ./$(NAME)
+	@$(CP) $(LIBFT) ./
 
 makeprintf:
 	@make -C $(PNT_DIR)
-	@$(CP) $(PRINTF) ./$(NAME)
-
-makegnl:
-	@make -C $(GNL_DIR)
-	@$(CP) $(FUNGNL) ./$(NAME)
+	@$(CP) $(PRINTF) ./
 
 clean:
 	@make clean -C $(LIB_DIR)
 	@make clean -C $(PNT_DIR)
-	@make clean -C $(GNL_DIR)
 
 fclean: clean
 	@$(RM) $(NAME) ./*.out
 	@make fclean -C $(LIB_DIR)
 	@make fclean -C $(PNT_DIR)
-	@make fclean -C $(GNL_DIR)
 
 re: fclean all
 
