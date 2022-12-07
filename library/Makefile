@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/16 16:24:27 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/12/07 16:27:46 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/12/07 16:57:34 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,11 @@ PNT_DIR	= liboutput/
 
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-LIBFT	= $(LIB_DIR)libft.a
-PRINT	= $(PNT_DIR)liboutput.a
+LIB_NAME	= libft.a
+OUT_NAME	= liboutput.a
+
+LIBFT	= $(LIB_DIR)$(LIB_NAME)
+PRINT	= $(PNT_DIR)$(OUT_NAME)
 
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
@@ -54,7 +57,7 @@ clean:
 	@$(MAKE) clean -C $(PNT_DIR)
 
 fclean:
-	@$(RM) $(NAME) ./*.out
+	@$(RM) $(LIB_NAME) $(OUT_NAME) ./*.out
 	@$(MAKE) fclean -C $(LIB_DIR)
 	@$(MAKE) fclean -C $(PNT_DIR)
 

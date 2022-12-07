@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 20:00:16 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/06 20:45:16 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/07 17:01:02 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ int
 	int	len;
 
 	len = 0;
-	if (nbr == 0)
-		return (1);
-	if (nbr < 0)
+	if (nbr <= 0)
 		len++;
 	while (nbr)
 	{
