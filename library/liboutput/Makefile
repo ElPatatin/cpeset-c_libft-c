@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 18:29:13 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/12/06 21:31:21 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/12/07 16:26:35 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,8 @@ CP		= cp -f
 LIB		= $(LIB_DIR)libft.a
 INCLUDE	= -I $(INC_DIR)
 
+# -=-=-=-=- PRINTF	-=-
+
 PRT_SRC	= ft_printf.c\
 		parser.c\
 		init_params.c\
@@ -62,8 +64,22 @@ PRT_UTL	= ft_printf_utils.c\
 		nbrs_utils.c\
 		margin_utils.c
 
+# -=-=-=-=- DPRINTF	-=-
+
+PFD_SRC	= ft_printf_fd.c\
+		parser_fd.c\
+		init_params_fd.c\
+		err_checks_fd.c
+
+PFD_UTL	= ft_printf_utils_fd.c\
+		chars_utils_fd.c\
+		nbrs_utils_fd.c\
+		margin_utils_fd.c
+
 SRCS	+= $(addprefix $(SRC_DIR), $(PRT_SRC))
 SRCS	+= $(addprefix $(UTL_DIR), $(PRT_UTL))
+SRCS	+= $(addprefix $(SRC_DIR), $(PFD_SRC))
+SRCS	+= $(addprefix $(UTL_DIR), $(PFD_UTL))
 
 OBJS	= $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
 DEPS	= $(addsuffix .d, $(basename $(OBJS)))
@@ -95,9 +111,9 @@ clean:
 	@echo "$(BLUE)	'Output' object files cleaned.$(DEF_COLOR)"
 
 fclean: 
-	@$(MAKE) clean
 	@$(MAKE) fclean -C $(LIB_DIR)
-	@$(RM) $(NAME) $(BNUS)
+	@$(RM) -r $(OBJ_DIR)
+	@$(RM) $(NAME)
 	@echo "$(WHITE)	All objects, dependencies and executables removed from 'output' library.$(DEF_COLOR)"
 
 re:

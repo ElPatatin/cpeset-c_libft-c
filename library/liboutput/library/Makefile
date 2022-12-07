@@ -6,7 +6,7 @@
 #    By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 19:14:32 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/12/01 02:00:28 by cpeset-c         ###   ########.fr        #
+#    Updated: 2022/12/07 16:26:03 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,25 +85,25 @@ all:
 
 $(NAME):: $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
-	@printf "\n\t$(WHITE)Library for \033[1;31mlibft $(WHITE)has been compiled!$(DEF_CLR)\n"
+	@printf "\n\t$(WHITE)Library for \033[1;31m'libprint' $(WHITE)has been compiled!$(DEF_CLR)\n"
 
 $(NAME)::
-	@printf "\t$(WHITE)Nothing more to be done for library \033[1;31mlibft.$(DEF_CLR)\n"
+	@printf "\t$(WHITE)Nothing more to be done for utils library \033[1;31m'libprint'.$(DEF_CLR)\n"
 
 -include $(DEPS)
 
 clean:
 	@$(RM) -r $(OBJ_DIR)
-	@printf "\t$(CYAN)Removed all objects and dependencies for library \033[1;31mlibft.$(DEF_CLR)\n"
+	@printf "\t$(CYAN)Removed all objects and dependencies for library \033[1;31m'libprint'.$(DEF_CLR)\n"
 
 fclean: 
-	@$(MAKE) clean
+	@$(RM) -r $(OBJ_DIR)
 	@$(RM) $(NAME)
-	@printf "\t$(CYAN)Deleted library \033[1;31mlibft.$(DEF_CLR)\n"
+	@printf "\t$(CYAN)Deleted library \033[1;31m'libprint'.$(DEF_CLR)\n"
 
 re:
 	@$(MAKE) fclean
 	@$(MAKE) all
-	@printf "\n\t$(GREEN)Library \033[1;31mlibft has been re-compiled.$(DEF_CLR)\n"
+	@printf "\n\t$(GREEN)Library \033[1;31m'libprint' has been re-compiled.$(DEF_CLR)\n"
 
 .PHONY: all clean fclean re
