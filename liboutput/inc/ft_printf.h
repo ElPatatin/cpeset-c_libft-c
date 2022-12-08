@@ -6,13 +6,14 @@
 /*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 18:36:08 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/06 21:28:30 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:34:33 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+# include "ft_data_structures.h"
 # include "../library/inc/libft.h"
 # include <stdarg.h>
 
@@ -36,34 +37,6 @@
 # define STR_BASE10		(char *)"0123456789"
 # define STR_BASE16L	(char *)"0123456789abcdef"
 # define STR_BASE16U	(char *)"0123456789ABCDEF"
-
-typedef struct s_vars
-{
-	int		ref;
-	char	c;
-	ssize_t	idx;
-	ssize_t	count;
-	ssize_t	errchk;
-	ssize_t	bytes;
-	char	*str;
-	t_ll	nbr;
-	t_ll	prs;
-	va_list	args;
-	va_list	copy;
-
-}			t_vars;
-
-typedef struct s_flags
-{
-	t_bool	minus;
-	t_bool	zero;
-	t_bool	dot;
-	t_bool	hash;
-	t_bool	space;
-	t_bool	plus;
-	t_bool	sign;
-	t_bool	hexpreffix;
-}			t_flags;
 
 // ft_printf function
 int		ft_printf(const char *fmt, ...);
