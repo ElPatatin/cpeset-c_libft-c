@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 19:47:10 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/07 16:20:52 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/08 23:47:38 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int
 }
 
 int
-	get_params(t_vars *vars, t_flags *flags)
+	get_params_fd(t_vars *vars, t_flags *flags)
 {
 	err_width_fd(vars, flags);
 	if (vars->bytes == ERRNUM)

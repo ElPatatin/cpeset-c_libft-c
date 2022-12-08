@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:08:37 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/06 20:39:55 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/08 18:38:42 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,7 @@ char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(char *s, int c);
 int		ft_str_wcount(char const *s, char c);
+char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strcpy(char *dst, char *src);
 size_t	ft_strlcpy(char *dst, const char *src, ssize_t dstsize);

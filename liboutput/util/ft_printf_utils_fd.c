@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 18:36:13 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/07 14:40:47 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/08 23:47:30 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ t_ll
 }
 
 ssize_t
-	print_hex_prefix(t_vars *vars, t_flags *flags)
+	print_hex_prefix_fd(t_vars *vars, t_flags *flags)
 {
 	if (flags->hexpreffix == TRUE)
 		return (FALSE);

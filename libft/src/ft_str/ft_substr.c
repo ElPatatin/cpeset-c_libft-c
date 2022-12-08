@@ -6,14 +6,14 @@
 /*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:52:20 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/06 20:53:57 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2022/12/08 18:37:51 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 char
-	*ft_substr(char const *s, unsigned int start, size_t len)
+	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*dst;
 	size_t	i;
