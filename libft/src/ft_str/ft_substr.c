@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:52:20 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/08 18:37:51 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2023/01/29 11:38:34 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,14 @@ char
 	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*dst;
-	size_t	i;
-	size_t	size;
 
-	if (!s)
-		return (NULL);
-	i = ft_strlen(s);
-	if (start > i)
+	if (!*s || start > ft_strlen(s))
 		return (ft_strdup(""));
-	if (start + len > i)
-		len = i - start;
-	size = len + 1;
-	dst = (char *)malloc(sizeof(char) * size);
+	if (start + len > ft_strlen(s))
+		len = ft_strlen(s) - start;
+	dst = (char *)ft_calloc(len + 1, sizeof(char));
 	if (!dst)
 		return (NULL);
 	ft_memcpy(dst, s + start, len);
-	dst[len] = '\0';
 	return (dst);
 }

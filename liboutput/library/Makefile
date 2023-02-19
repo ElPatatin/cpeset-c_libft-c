@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+         #
+#    By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 19:14:32 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/12/07 16:26:03 by cpeset-c         ###   ########.fr        #
+#    Updated: 2023/02/19 20:09:14 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,12 +37,15 @@ STR_DIR	= ft_str/
 
 INC_DIR	= inc/
 SRC_DIR	= src/
-OBJ_DIR	= .obj/
+
+OBJ_DIR	= .objs/
+DEP_DIR	= .deps/
 
 # -=-=-=-=-	CMND -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-CFLAGS		= -Wall -Wextra -Werror -W -O3 -Oz
-XFLAGS		= -fsanitize=address -g
+CFLAGS	= -Wall -Wextra -Werror -W -O3
+DFLAGS	= -MT $@ -MMD -MP
+XFLAGS	= -fsanitize=address -g3
 
 AR		= ar -rcs
 RM		= rm -f
@@ -51,7 +54,7 @@ CP		= cp -f
 
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-INCLUDE	= -I$(INC_DIR)
+INCLUDE	= -I./$(INC_DIR)
 
 FIS_SRC	= ft_islower.c ft_isupper.c ft_isalpha.c ft_isprint.c \
 		ft_isdigit.c ft_isalnum.c ft_issign.c ft_isspace.c ft_isascii.c \
@@ -71,14 +74,15 @@ SRCS	+= $(addprefix $(SRC_DIR), $(addprefix $(MTH_DIR), $(MTH_SRC)))
 SRCS	+= $(addprefix $(SRC_DIR), $(addprefix $(STR_DIR), $(STR_SRC)))
 
 OBJS	= $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
-DEPS	= $(addsuffix .d, $(basename $(OBJS)))
+DEPS	= $(addprefix $(DEP_DIR), $(addsuffix .d, $(basename $(SRCS))))
 
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
 $(OBJ_DIR)%.o: %.c $(MKFL)
-	@$(MK) $(dir $@)
+	@$(MK) $(dir $@) $(dir $(subst $(OBJ_DIR), $(DEP_DIR), $@))
 	@printf "\r$(GREEN)\tCompiling: $(YELLOW)$< $(DEF_CLR)                   \r"
-	@$(CC) -MT $@ -MMD -MP $(CFLAGS) $(INCLUDE) -c $< -o $@
+	@$(CC) $(CFLAGS) $(DFLAGS) $(XFLAGS) $(INCLUDE) -c $< -o $@
+	@mv $(patsubst %.o, %.d, $@) $(dir $(subst $(OBJ_DIR), $(DEP_DIR), $@))
 
 all:
 	@$(MAKE) $(NAME)
@@ -93,11 +97,11 @@ $(NAME)::
 -include $(DEPS)
 
 clean:
-	@$(RM) -r $(OBJ_DIR)
+	@$(RM) -r $(OBJ_DIR) $(DEP_DIR)
 	@printf "\t$(CYAN)Removed all objects and dependencies for library \033[1;31m'libprint'.$(DEF_CLR)\n"
 
 fclean: 
-	@$(RM) -r $(OBJ_DIR)
+	@$(RM) -r $(OBJ_DIR) $(DEP_DIR)
 	@$(RM) $(NAME)
 	@printf "\t$(CYAN)Deleted library \033[1;31m'libprint'.$(DEF_CLR)\n"
 

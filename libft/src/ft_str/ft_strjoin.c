@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:49:39 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/06 20:52:49 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2023/02/19 20:13:55 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,23 @@
 char
 	*ft_strjoin(char *s1, char *s2)
 {
-	int		i;
-	int		j;
-	char	*new;
-	size_t	newlen;
+	char	*dst;
+	char	*ptr;
 
-	newlen = ft_strlen(s1) + ft_strlen(s2);
 	if (!s1)
 	{
-		s1 = malloc(sizeof(char) * 1);
+		s1 = ft_strdup("");
 		if (!s1)
 			return (NULL);
-		s1[0] = '\0';
-	}	
-	new = (char *)malloc(sizeof(char) * (newlen + 1));
-	if (!new)
+	}
+	dst = (char *)ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, sizeof(char));
+	if (!dst)
 		return (NULL);
-	i = -1;
-	j = -1;
-	while (s1[++i])
-		new[i] = s1[i];
-	while (s2[++j])
-		new[i + j] = s2[j];
-	new[i + j] = '\0';
-	free(s1);
-	return (new);
+	ptr = dst;
+	while (*s1)
+		*dst++ = *s1++;
+	while (*s2)
+		*dst++ = *s2++;
+	ft_delete((void *)s1);
+	return (ptr);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+         #
+#    By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/27 19:35:19 by cpeset-c          #+#    #+#              #
-#    Updated: 2022/12/07 16:27:54 by cpeset-c         ###   ########.fr        #
+#    Updated: 2023/02/19 20:20:33 by cpeset-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,19 +29,18 @@ WHITE		:= \033[0;97m
 
 # -=-=-=-=-	CMND -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-CFLAGS	= -Wall -Werror -Wextra -W -O3 -Ofast
+CFLAGS	= -Wall -Werror -Wextra -W -O3
 DFLAGS	= -MT $@ -MMD -MP
 XFLAGS	= -g3 -fsanitize=address
 AR		= ar rcs
 RM		= rm -f
-MD		= mkdir -p
+MK		= mkdir -p
 CP		= cp -f
 
 # -=-=-=-=-	PATH -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-SRC_DIR	= src/
-OBJ_DIR	= .obj/
 INC_DIR	= inc/
+SRC_DIR	= src/
 
 FIS_DIR	= $(SRC_DIR)ft_is/
 MTH_DIR = $(SRC_DIR)ft_math/
@@ -52,9 +51,12 @@ STR_DIR	= $(SRC_DIR)ft_str/
 LST_DIR	= $(SRC_DIR)ft_list/
 GNL_DIR	= $(SRC_DIR)ft_gnl/
 
+OBJ_DIR	= .objs/
+DEP_DIR	= .deps/
+
 # -=-=-=-=-	FILE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-INCLUDE		= -I $(INC_DIR)
+INCLUDE		= -I./$(INC_DIR)
 
 FIS_SRC	= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 		ft_islower.c ft_isprint.c ft_issign.c ft_isspace.c \
@@ -67,7 +69,7 @@ MTH_SRC	= ft_absval.c ft_atoi.c ft_atoi_base.c ft_factorial.c \
 
 MEM_SRC	= ft_bzero.c ft_calloc.c ft_memchr.c ft_memcmp.c \
 		ft_memfree.c ft_memmove.c ft_memset.c ft_range.c \
-		ft_rrange.c ft_strdup.c ft_ultrange.c
+		ft_rrange.c ft_strdup.c ft_ultrange.c ft_delete.c
 
 PUT_SRC	= ft_putchar.c ft_putchar_fd.c ft_putnbr.c ft_putnbr_fd.c \
 		ft_putnbr_base_fd.c ft_putstr.c ft_putstr_fd.c
@@ -102,14 +104,15 @@ SRCS	+= $(addprefix $(LST_DIR), $(LST_SRC))
 SRCS	+= $(addprefix $(GNL_DIR), $(GNL_SRC))
 
 OBJS	= $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
-DEPS	= $(addsuffix .d, $(basename $(OBJS)))
+DEPS	= $(addprefix $(DEP_DIR), $(addsuffix .d, $(basename $(SRCS))))
 
 # -=-=-=-=-	RULE -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- #
 
-$(OBJ_DIR)%.o: $(SRCS_DIR)%.c $(MKFL)
-	@$(MD) $(dir $@)
+$(OBJ_DIR)%.o: %.c $(MKFL)
+	@$(MK) $(dir $@) $(dir $(subst $(OBJ_DIR), $(DEP_DIR), $@))
 	@printf "$(WHITE)\r\tCompiling: $(YELLOW)$<$(DEF_COLOR)                           \r"
 	@$(CC) $(CFLAGS) $(DFLAGS) $(XFLAGS) $(INCLUDE) -c $< -o $@
+	@mv $(patsubst %.o, %.d, $@) $(dir $(subst $(OBJ_DIR), $(DEP_DIR), $@))
 
 all:
 	@$(MAKE) $(NAME)
@@ -124,11 +127,11 @@ $(NAME)::
 -include $(DEPS)
 
 clean:
-	@$(RM) -r $(OBJ_DIR)
+	@$(RM) -r $(OBJ_DIR) $(DEP_DIR)
 	@echo "$(BLUE)	'Libft' object files cleaned.$(DEF_COLOR)"
 
 fclean:
-	@$(RM) -r $(OBJ_DIR)
+	@$(RM) -r $(OBJ_DIR) $(DEP_DIR)
 	@$(RM) $(NAME)
 	@echo "$(WHITE)	All objects, dependencies and executables removed from 'libft'.$(DEF_COLOR)"
 

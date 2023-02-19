@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_delete.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 16:54:44 by cpeset-c          #+#    #+#             */
-/*   Updated: 2023/02/19 20:18:24 by cpeset-c         ###   ########.fr       */
+/*   Created: 2023/02/19 20:12:43 by cpeset-c          #+#    #+#             */
+/*   Updated: 2023/02/19 20:13:35 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-int
-	ft_putstr_fd(char	*str, int fd)
+void
+	*ft_delete(void *dlt)
 {
-	unsigned int	i;
-
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
-		if (write(fd, &str[i++], sizeof(char)) < 0)
-			return (-1);
-	return (ft_strlen(str));
+	free(dlt);
+	dlt = NULL;
+	return (NULL);
 }

@@ -6,7 +6,8 @@
 *.ko
 *.obj
 *.elf
-obj/
+.objs/
+.deps/
 .out
 
 # Linker output
