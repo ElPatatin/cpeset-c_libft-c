@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:52:20 by cpeset-c          #+#    #+#             */
-/*   Updated: 2023/01/29 11:38:34 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2023/02/22 11:32:57 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ char
 {
 	char	*dst;
 
-	if (!*s || start > ft_strlen(s))
+	if (start > ft_strlen(s))
 		return (ft_strdup(""));
-	if (start + len > ft_strlen(s))
+	if (len > ft_strlen(s))
 		len = ft_strlen(s) - start;
 	dst = (char *)ft_calloc(len + 1, sizeof(char));
 	if (!dst)
