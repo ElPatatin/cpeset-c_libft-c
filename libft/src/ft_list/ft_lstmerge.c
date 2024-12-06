@@ -3,15 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmerge.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:15:17 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/06 20:42:31 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2024/12/06 22:47:18 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "liblist.h"
 
+/**
+ * @name ft_lstmerge
+ * @brief Merge two linked lists.
+ * 
+ * @param begin_list1 The address of a pointer to the first link of a list.
+ * @param begin_list2 The address of a pointer to the first link of a list.
+ * @return void
+ * 
+ * @dir ft_list/
+ * @file ft_lstmerge.c
+ * @date 18-07-2022
+ * @author cpeset-c
+ * 
+ * @see ft_lstmerge_sort
+ */
 void
 	ft_lstmerge(t_list **begin_list1, t_list *begin_list2)
 {

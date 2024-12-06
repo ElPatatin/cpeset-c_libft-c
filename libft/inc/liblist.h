@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 17:51:28 by cpeset-c          #+#    #+#             */
-/*   Updated: 2024/12/06 17:51:46 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2024/12/06 23:09:27 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,7 @@
  * - ft_lstmerge_sort.c
  * - ft_lstmerge.c
  * - ft_lstnew.c
- * - ft_lstpush_back.c
- * - ft_lstpush_front.c
- * - ft_lstpush_strs.c
  * - ft_lstremove_if.c
- * - ft_lstreverse_fun.c
  * - ft_lstreverse.c
  * - ft_lstsize.c
  * - ft_lstsort_insert.c
@@ -67,16 +63,12 @@ int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *begin_list);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstpush_front(t_list **begin_list, void *data);
-void	ft_lstpush_back(t_list **begin_list, void *data);
-t_list	*ft_lstpush_strs(int size, char **strs);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstremove_if(t_list **begin_list, void *data_ref, int (*cmp)(),
 			void (*free_fct)(void *));
 t_list	*ft_lstat(t_list *begin_list, t_unt nbr);
 void	ft_lstreverse(t_list **begin_list);
-void	ft_lstreverse_fun(t_list *begin_list);
 void	ft_lstforeach(t_list *begin_list, void (*f)(void *));
 void	ft_lstforeach_if(t_list *begin_list, void (*f)(void *),
 			void *data_ref, int (*cmp)());

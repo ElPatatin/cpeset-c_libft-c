@@ -3,34 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:17:01 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/06 20:43:03 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2024/12/06 23:13:07 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "liblist.h"
 
+/**
+ * @name ft_lstsort
+ * @brief Sorts a linked list.
+ * 
+ * @param begin_list The address of a pointer to the first link of a list.
+ * @param cmp The address of the function used to compare the data.
+ * @return void
+ * 
+ * @dir ft_list/
+ * @file ft_lstsort.c
+ * @date 18-07-2022
+ * @author cpeset-c
+ * 
+ * @see ft_lstsort_insert
+ */
 void
 	ft_lstsort(t_list **begin_list, int (*cmp)())
 {
-	int		swap;
 	t_list	*current;
+	t_list	*next;
 
-	swap = 1;
+	if (!begin_list || !*begin_list || !(*begin_list)->next)
+		return ;
 	current = *begin_list;
-	while (swap == 1)
+	while (current->next)
 	{
-		swap = 0;
-		while (current && current->next)
+		next = current->next;
+		if ((*cmp)(current->data, next->data) > 0)
 		{
-			if ((*cmp)(current->data, current->next->data) == 0)
-			{
-				ft_lstswap(current, current->next);
-				swap = 1;
-			}
-			current = current->next;
+			ft_lstswap(current, next);
+			current = *begin_list;
 		}
+		else
+			current = current->next;
 	}
 }

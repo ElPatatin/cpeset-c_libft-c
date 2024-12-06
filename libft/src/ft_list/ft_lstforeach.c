@@ -3,19 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstforeach.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:14:47 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/06 20:42:13 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2024/12/06 22:40:56 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "liblist.h"
 
+/**
+ * @name ft_lstforeach
+ * @brief Iterates the list ’begin_list’ and applies the function ’f’ to the data of each element.
+ * 
+ * @param begin_list The beginning of the list.
+ * @param f The address of the function used to iterate the list.
+ * @return void
+ * 
+ * @dir ft_list/
+ * @file ft_lstforeach.c
+ * @date 18-07-2022
+ * @author cpeset-c
+ * 
+ * @see ft_lstclear | ft_lstadd_back
+ */
 void
 	ft_lstforeach(t_list *begin_list, void (*f)(void *))
 {
-	if (!begin_list || !f)
+	if (!begin_list)
 		return ;
 	while (begin_list)
 	{
