@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:35:34 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/06 20:44:19 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2024/12/06 17:01:33 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,24 +44,21 @@ static char
 	char	*buff;
 	int		reading;
 
-	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	buff = ft_calloc((BUFFER_SIZE + 1), sizeof(char));
 	if (!buff)
 		return (NULL);
-	buff[0] = '\0';
-	reading = 1;
-	while (!ft_strchr(buffer, '\n') && reading != 0)
+	reading = TRUE;
+	while (!ft_strchr(buffer, '\n') && reading != FALSE)
 	{
 		reading = read(fd, buff, BUFFER_SIZE);
-		if (reading == -1)
+		if (reading == ERRNUM)
 		{
-			free(buff);
-			free(buffer);
-			return (NULL);
+			ft_delete(buff);
+			return (ft_delete(buffer));
 		}
-		buff[reading] = '\0';
 		buffer = ft_strjoin(buffer, buff);
 	}
-	free(buff);
+	ft_delete(buff);
 	return (buffer);
 }
 
@@ -76,21 +73,14 @@ static char
 		return (NULL);
 	while (buffer[i] && buffer[i] != '\n')
 		i++;
-	str = (char *)malloc(sizeof(char) * (i + 2));
+	str = ft_calloc((i + 2), sizeof(char));
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (buffer[i] && buffer[i] != '\n')
-	{
+	while (buffer[i] && buffer[i++] != '\n')
 		str[i] = buffer[i];
-		i++;
-	}
-	if (buffer[i] == '\n')
-	{
+	if (buffer[i++] == '\n')
 		str[i] = buffer[i];
-		i++;
-	}
-	str[i] = '\0';
 	return (str);
 }
 
@@ -103,23 +93,16 @@ static char
 
 	i = 0;
 	if (!buffer)
-	{
-		free (buffer);
-		return (NULL);
-	}
+		return (ft_delete(buffer));
 	while (buffer[i] && (buffer[i] != '\n'))
 		i++;
 	if (buffer[i] == '\0')
-	{
-		free(buffer);
-		return (NULL);
-	}
+		return (ft_delete(buffer));
 	str = ft_calloc(ft_strlen(buffer) - i + 1, 1);
 	i++;
 	c = 0;
 	while (buffer[i])
 		str[c++] = buffer[i++];
-	str[c] = '\0';
-	free(buffer);
+	ft_delete(buffer);
 	return (str);
 }
