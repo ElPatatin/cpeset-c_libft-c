@@ -3,15 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 20:09:04 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/06 20:10:49 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2024/12/07 16:43:22 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libmath.h"
 
+/**
+ * @name ft_find_next_prime
+ * @brief Find the next prime number.
+ * 
+ * @param nb The number to start the search.
+ * @return int The next prime number.
+ * 
+ * @dir ft_math/
+ * @file ft_find_next_prime.c
+ * @date 09-07-2022
+ * @author cpeset-c
+ * 
+ * @see ft_prime
+ */
 int
 	ft_find_next_prime(int nb)
 {

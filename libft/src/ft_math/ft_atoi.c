@@ -3,15 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 19:59:46 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/06 21:00:21 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2024/12/07 14:55:23 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libmath.h"
+#include "libis.h"
 
+/**
+ * @name ft_atoi
+ * @brief Convert a string to an integer.
+ * 
+ * @param str The string to convert.
+ * @return int The converted integer.
+ * 
+ * @dir ft_math/
+ * @file ft_atoi.c
+ * @date 09-07-2022
+ * @author cpeset-c
+ * 
+ * @see ft_atoi_base
+ */
 int
 	ft_atoi(const char *str)
 {
