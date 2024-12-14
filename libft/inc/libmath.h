@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 17:55:28 by cpeset-c          #+#    #+#             */
-/*   Updated: 2024/12/06 17:56:13 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2024/12/14 22:25:58 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
  * - ft_atoull_base.c
  * - ft_factorial.c
  * - ft_find_next_prime.c
+ * - ft_gcd.c
  * - ft_itoa.c
  * - ft_itoa_base.c
  * - ft_lcm.c
@@ -51,6 +52,7 @@ t_ll	ft_factorial(t_ll nb);
 int		ft_sqrt(int nb);
 int		ft_prime(int nb);
 t_unt	ft_lcm(t_unt a, t_unt b);
+t_unt	ft_gcd(t_unt a, t_unt b);
 int		ft_find_next_prime(int nb);
 t_ll	ft_absval(t_ll n);
 int		ft_nbrlen(t_ll nbr);

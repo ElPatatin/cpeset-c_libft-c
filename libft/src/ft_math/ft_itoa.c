@@ -3,15 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 20:00:02 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/06 20:11:00 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2024/12/09 12:56:10 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libmath.h"
+#include "libmem.h"
 
+/**
+ * @name ft_itoa
+ * @brief Convert an integer to a string.
+ * 
+ * @param nbr The integer to convert.
+ * @return char* The string representation of the integer.
+ * 
+ * @dir ft_math/
+ * @file ft_itoa.c
+ * @date 09-07-2022
+ * @author cpeset-c
+ * 
+ * @see ft_itoa_base
+ */
 char
 	*ft_itoa(int nbr)
 {
@@ -19,10 +34,9 @@ char
 	int		len;
 
 	len = ft_nbrlen(nbr);
-	res = (char *)malloc(sizeof(char) * len + 1);
+	res = ft_calloc(len + 1, sizeof(char));
 	if (!res)
 		return (NULL);
-	res[len] = '\0';
 	if (nbr < 0)
 		res[0] = '-';
 	else if (nbr == 0)

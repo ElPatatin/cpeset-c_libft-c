@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lcm.c                                           :+:      :+:    :+:   */
+/*   ft_gcd.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 17:40:16 by cpeset-c          #+#    #+#             */
-/*   Updated: 2024/12/14 22:25:14 by cpeset-c         ###   ########.fr       */
+/*   Created: 2024/12/14 22:24:59 by cpeset-c          #+#    #+#             */
+/*   Updated: 2024/12/14 22:25:09 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /**
  * @name ft_lcm
  * @brief Calculate the least common multiple of two numbers.
+ * gcd means Greatest Common Divisor
  * 
  * @param a The first number.
  * @param b The second number.
@@ -26,9 +27,13 @@
  * @author cpeset-c
  */
 t_unt
-	ft_lcm(t_unt a, t_unt b)
+	ft_gcd(t_unt a, t_unt b)
 {
-	if (!a || !b)
-		return (0);
-	return (a / ft_gcd(a, b) * b);
+	while (b != 0)
+	{
+		t_unt temp = b;
+		b = a % b;
+		a = temp;
+	}
+	return (a);
 }
