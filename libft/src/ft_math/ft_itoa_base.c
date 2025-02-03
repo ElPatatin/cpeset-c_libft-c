@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 20:00:08 by cpeset-c          #+#    #+#             */
-/*   Updated: 2024/12/14 22:25:27 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:11:32 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,12 @@ char
 		nbr /= base;
 	}
 	return (res);
+}
+
+int main(void)
+{
+	char *str_base = "0123456789ABCDEF";
+	int nbr = 42;
+	printf("%s\n", ft_itoa_base(nbr, str_base));
+	return (0);
 }

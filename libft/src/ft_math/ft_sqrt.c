@@ -3,15 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 20:11:44 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/06 20:11:29 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:15:10 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @name ft_sqrt
+ * @brief This function calculates the square root of a number.
+ * 
+ * @param nb The number to calculate the square root of.
+ * @return int The square root of the number.
+ * 
+ * @dir ft_math/
+ * @file ft_sqrt.c
+ * @date 09-07-2022
+ * @author cpeset-c
+ */
 int
 	ft_sqrt(int nb)
 {

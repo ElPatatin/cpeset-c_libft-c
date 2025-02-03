@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ulltoa_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 16:53:48 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/06 20:39:25 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:15:30 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief This function converts an unsigned long long integer to a string in a
+ * given base.
+ *
+ * @param nbr The number to convert.
+ * @param str_base The base to convert the number to.
+ * @return char* The string representation of the number in the given base.
+ */
 char
 	*ft_ulltoa_base(t_ull nbr, char *str_base)
 {

@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stou.c                                          :+:      :+:    :+:   */
+/*   libsprintf.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 00:01:14 by cpeset-c          #+#    #+#             */
-/*   Updated: 2025/02/03 16:15:25 by cpeset-c         ###   ########.fr       */
+/*   Created: 2025/02/03 16:08:26 by cpeset-c          #+#    #+#             */
+/*   Updated: 2025/02/03 16:08:40 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBSPRINTF_H
+# define LIBSPRINTF_H
 
-/**
- * @brief This function converts a signed long long integer to an unsigned 
- * long long integer.
- * 
- * @param nbr The number to convert.
- * @return t_ll The converted number.
- */
-t_ll
-	ft_stou(t_ll nbr)
-{
-	t_ll	unbr;
+# include "commons.h"
 
-	unbr = nbr + UINT_MAX + 1;
-	return (unbr);
-}
+#endif

@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:08:37 by cpeset-c          #+#    #+#             */
-/*   Updated: 2024/12/06 23:16:17 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:08:21 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 # include "libmem.h"	// Functions to manipulate memory. (to document)
 # include "libput.h"	// Functions to print data. (to document)
 #include "libprint.h"	// TODO
-#include "libprintfd.h"	// TODO
+#include "libdprint.h"	// TODO
+#include "libsprint.h"	// TODO
 # include "libsort.h"	// Functions to sort data. (to document)
 # include "libstr.h"	// Functions to manipulate strings. (to document)
 

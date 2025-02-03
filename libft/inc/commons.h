@@ -6,13 +6,14 @@
 /*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 17:48:54 by cpeset-c          #+#    #+#             */
-/*   Updated: 2024/12/06 17:54:12 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:20:42 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef COMMONS_H
 # define COMMONS_H
 
+# include <stdint.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>

@@ -6,11 +6,12 @@
 /*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 11:35:34 by cpeset-c          #+#    #+#             */
-/*   Updated: 2024/12/06 17:01:33 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:08:06 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "commons.h"
+#include "libgnl.h"
 
 static char	*ft_read_save(int fd, char *buffer);
 static char	*ft_get_line(char *buffer);

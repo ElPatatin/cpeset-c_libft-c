@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 17:56:57 by cpeset-c          #+#    #+#             */
-/*   Updated: 2024/12/06 17:58:27 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:21:29 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 # define LIBMEM_H
 
 # include "commons.h"
+
+// Macros for ft_printmem
+#define MEM_SEP	1
+#define MEM_SIZE 100
+#define HEX_BASE 16
 
 /**
  * =============================================================================
