@@ -6,7 +6,7 @@
 /*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 16:20:04 by cpeset-c          #+#    #+#             */
-/*   Updated: 2025/02/03 16:24:46 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:38:10 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,20 @@ static t_bool
 	write_hex_digit(unsigned char value);
 static t_bool
 	ft_print_content(const unsigned char *mem, size_t i, size_t size);
+
+/**
+ * @name ft_printmem
+ * @brief Print the memory in hexadecimal and ASCII format.
+ * 
+ * @param memory The pointer to the memory to print.
+ * @param size The size of the memory to print.
+ * @return t_bool Return TRUE if an error occurs, otherwise return FALSE.
+ * 
+ * @dir ft_mem/
+ * @file ft_printmem.c
+ * @date 03-02-2025
+ * @author cpeset-c
+ */
 
 t_bool
 	ft_printmem(const void *memory, size_t size)

@@ -3,15 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpeset-c <cpeset-c@student.42barce>        +#+  +:+       +#+        */
+/*   By: cpeset-c <cpeset-c@student.42barce.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 16:54:03 by cpeset-c          #+#    #+#             */
-/*   Updated: 2022/12/06 20:48:34 by cpeset-c         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:47:10 by cpeset-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @name ft_putnbr
+ * @brief Outputs the number 'nbr' to the standard output.
+ * 
+ * @param nbr The number to output.
+ * @return int Return 0 on success, -1 on failure.
+ * 
+ * @dir ft_put/
+ * @file ft_putnbr.c
+ * @date 16-07-2022
+ * @author cpeset-c
+ * 
+ * @see ft_putnbr_fd | ft_putnbr_base_fd
+ */
 int
 	ft_putnbr(t_ll nbr)
 {
